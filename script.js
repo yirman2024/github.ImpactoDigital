@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
         💰 Rango de inversión en educación: *${rango}*`;
 
         // Número de WhatsApp donde se enviará la información
-        let numeroWhatsApp = "573117947704"; // Código de país + número sin espacios
+        let numeroWhatsApp = "573117055243"; // Código de país + número sin espacios ni símbolos
 
         // Generar enlace de WhatsApp y abrirlo en una nueva pestaña
         let url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
