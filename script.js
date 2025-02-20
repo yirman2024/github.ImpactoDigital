@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const mensajeCodificado = encodeURIComponent(mensaje);
 
             // Enlace a WhatsApp con el número y el mensaje
-            const enlaceWhatsApp = `https://wa.me/573117947704?text=${mensajeCodificado}`;
+            const enlaceWhatsApp = `https://wa.me/573117055243?text=${mensajeCodificado}`;
 
             // Redirigir al usuario a WhatsApp
             window.location.href = enlaceWhatsApp;
