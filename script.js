@@ -40,30 +40,3 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = urlWhatsApp;
     });
 });
-
-
-
-
-
-    
-        function enviarFormulario(event) {
-            event.preventDefault(); // Evita que el formulario se envíe de manera tradicional
-
-            // Obtener los valores del formulario
-            const nombre = document.getElementById('nombre').value;
-            const whatsapp = document.getElementById('whatsapp').value;
-            const interes = document.getElementById('interes').value;
-            const asistencia = document.getElementById('asistencia').value;
-
-            // Crear el mensaje para enviar por WhatsApp
-            const mensaje = `Hola, me llamo ${nombre} y mi WhatsApp es ${whatsapp}. Estoy interesado en ${interes} y mi modalidad de asistencia será ${asistencia}.`;
-
-            // Codificar el mensaje para URL
-            const mensajeCodificado = encodeURIComponent(mensaje);
-
-            // Enlace a WhatsApp con el número y el mensaje
-            const enlaceWhatsApp = `https://wa.me/573117055243?text=${mensajeCodificado}`;
-
-            // Redirigir al usuario a WhatsApp
-            window.location.href = enlaceWhatsApp;
-        }
