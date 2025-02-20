@@ -1,6 +1,5 @@
-
 document.addEventListener("DOMContentLoaded", function() {
-    // Definir la fecha del evento (18 de febrero a las 7:30 PM hora local)
+    // Definir la fecha del evento (20 de febrero de 2025 a las 9:30 PM hora local)
     const fechaEvento = new Date("February 20, 2025 21:30:00").getTime();
 
     function actualizarCuentaRegresiva() {
@@ -12,11 +11,20 @@ document.addEventListener("DOMContentLoaded", function() {
             let minutos = Math.floor((tiempoRestante % (1000 * 60 * 60)) / (1000 * 60));
             let segundos = Math.floor((tiempoRestante % (1000 * 60)) / 1000);
 
-            document.getElementById("horas").textContent = horas.toString().padStart(2, "0");
-            document.getElementById("minutos").textContent = minutos.toString().padStart(2, "0");
-            document.getElementById("segundos").textContent = segundos.toString().padStart(2, "0");
+            let horasElem = document.getElementById("horas");
+            let minutosElem = document.getElementById("minutos");
+            let segundosElem = document.getElementById("segundos");
+
+            if (horasElem && minutosElem && segundosElem) {
+                horasElem.textContent = horas.toString().padStart(2, "0");
+                minutosElem.textContent = minutos.toString().padStart(2, "0");
+                segundosElem.textContent = segundos.toString().padStart(2, "0");
+            }
         } else {
-            document.getElementById("cuentaRegresiva").textContent = "¡El evento ha comenzado!";
+            let cuentaRegresivaElem = document.getElementById("cuentaRegresiva");
+            if (cuentaRegresivaElem) {
+                cuentaRegresivaElem.textContent = "¡El evento ha comenzado!";
+            }
             clearInterval(intervalo);
         }
     }
@@ -25,18 +33,36 @@ document.addEventListener("DOMContentLoaded", function() {
     actualizarCuentaRegresiva();
 
     // Redirección a WhatsApp con datos del formulario
-    document.getElementById('registroForm').addEventListener('submit', function(event) {
+    document.getElementById('formulario').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        let nombre = document.getElementById('nombre').value;
-        let whatsapp = document.getElementById('whatsapp').value;
-        let modalidad = document.getElementById('modalidad').value;
-        let interes = document.getElementById('interes').value;
+        let nombre = document.getElementById("nombre").value.trim();
+        let whatsapp = document.getElementById("whatsapp").value.trim();
+        let interes = document.getElementById("interes").value;
+        let asistencia = document.getElementById("asistencia").value;
+        let importancia = document.getElementById("importancia").value;
+        let rango = document.getElementById("rango").value;
 
-        let mensaje = `Hola, mi nombre es ${nombre}. Estoy interesado en el evento y prefiero asistir de forma ${modalidad}. Me interesa especialmente ${interes}. ¿Podrían enviarme la invitación?`;
+        // Validación de campos
+        if (!nombre || !whatsapp || !interes || !asistencia || !importancia || !rango) {
+            alert("Por favor, completa todos los campos.");
+            return;
+        }
 
-        let urlWhatsApp = `https://wa.me/123456789?text=${encodeURIComponent(mensaje)}`;
+        // Crear el mensaje para WhatsApp
+        let mensaje = `👋 ¡Hola! Quiero registrarme al evento. Mis datos son:
+        📌 Nombre: *${nombre}*
+        📱 WhatsApp: *${whatsapp}*
+        📖 Interés: *${interes}*
+        🏛 Modalidad de asistencia: *${asistencia}*
+        📚 Importancia de la educación: *${importancia} / 5*
+        💰 Rango de inversión en educación: *${rango}*`;
 
-        window.location.href = urlWhatsApp;
+        // Número de WhatsApp donde se enviará la información
+        let numeroWhatsApp = "573117947704"; // Código de país + número sin espacios
+
+        // Generar enlace de WhatsApp y abrirlo en una nueva pestaña
+        let url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, "_blank");
     });
 });
