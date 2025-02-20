@@ -80,52 +80,14 @@
     </form>
 </div>
 
-<!-- Script para enviar datos a WhatsApp -->
-<script>
-function enviarFormulario(event) {
-    event.preventDefault(); // Evita el envío tradicional del formulario
-
-    // Obtener los valores del formulario
-    let nombre = document.getElementById("nombre").value.trim();
-    let whatsapp = document.getElementById("whatsapp").value.trim();
-    let interes = document.getElementById("interes").value;
-    let asistencia = document.getElementById("asistencia").value;
-    let importancia = document.getElementById("importancia").value;
-    let rango = document.getElementById("rango").value;
-
-    // Verificar que todos los campos estén completos
-    if (!nombre || !whatsapp || !interes || !asistencia || !importancia || !rango) {
-        alert("Por favor, completa todos los campos.");
-        return;
-    }
-
-    // Formatear mensaje para WhatsApp
-    let mensaje = `👋 ¡Hola! Quiero registrarme al evento. Mis datos son:
-    📌 Nombre: *${nombre}*
-    📱 WhatsApp: *${whatsapp}*
-    📖 Interés: *${interes}*
-    🏛 Modalidad de asistencia: *${asistencia}*
-    📚 Importancia de la educación: *${importancia} / 5*
-    💰 Rango de inversión en educación: *${rango}*`;
-
-    // Número de WhatsApp donde se enviará la información
-    let numeroWhatsApp = "573117947704"; // Código de país + número sin espacios
-
-    // Generar enlace de WhatsApp y abrirlo en una nueva pestaña
-    let url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-    window.open(url, "_blank");
-}
-</script>
-
-   
 
     
-
-    <!-- Sección de derechos reservados y políticas -->
-    <footer>
-        <p>© 2025 Todos los derechos reservados | <a href="politica.html">Política de Privacidad</a></p>
-    </footer>
+<!-- Sección de derechos reservados y políticas -->
+<footer>
+    <p>© 2025 Todos los derechos reservados | <a href="politica.html">Política de Privacidad</a></p>
+</footer>
     <script src="script.js"></script>
 
+    
 </body>
 </html>
