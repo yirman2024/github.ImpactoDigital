@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Definir la fecha del evento (20 de febrero de 2025 a las 9:30 PM hora local)
-    const fechaEvento = new Date("February 22, 2025 21:30:00").getTime();
+    // Definir la fecha del evento (23 de febrero de 2025 a las 9:30 PM hora local)
+    const fechaEvento = new Date("February 23, 2025 19:30:00").getTime();
 
     function actualizarCuentaRegresiva() {
         let ahora = new Date().getTime();
