@@ -8,17 +8,33 @@
     
 </head>
 <body>
-
+   
     <!-- Anuncio de urgencia en la parte superior -->
-    <div class="anuncio-urgencia">
+    <div class="anuncio">
         <span>¡Hey quedan pocas horas para registrarte y acceder al evento exclusivo! ¡No pierdas esta oportunidad!</span>
     </div>
+
+     <!-- Encabezado con Logo -->
+     <body class="index-page">
+        <header>
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo de la Empresa">
+                </a>
+            </div>
+        </header>
+    </body>
+    
 
     <br><br><br><br>
     <div class="container">
         <h1 class="titulo">🎉 Evento Exclusivo: Presencial y Virtual 🎉</h1>
         <p class="subtitulo">Mira el video y completa el formulario para recibir tu invitación.</p>
 
+
+
+        
+        
         <!-- Contador con efecto neón -->
         <div id="contador">
             <h2 class="titulo-contador">⏳ El evento comienza en:</h2>
@@ -58,6 +74,7 @@
         <!-- Nueva sección: Importancia de la educación -->
         <label for="importancia">¿Qué tan importante es la educación para alcanzar tus metas?</label>
         <select id="importancia" name="importancia" required>
+            <option value="">Selecciona tu Importancia</option>
             <option value="1">1 - Poco importante</option>
             <option value="2">2</option>
             <option value="3">3 - Neutral</option>
@@ -68,6 +85,7 @@
         <!-- Nueva sección: Rango de inversión en educación -->
         <label for="rango">Si pudieras invertir en educación, ¿qué rango se ajusta mejor a tu capacidad?</label>
         <select id="rango" name="rango" required>
+            <option value="">Selecciona tu Rango</option>
             <option value="hasta 500,000">Hasta 500,000</option>
             <option value="500,000 - 1,000,000">Entre 500,000 y 1 millón</option>
             <option value="1,000,000 - 2,000,000">Entre 1 millón y 2 millones</option>
@@ -76,6 +94,9 @@
             <option value="más de 5,000,000">Más de 5 millones (Ejemplo: hasta 12 millones)</option>
         </select><br>
 
+        <!-- Botón para ver paquetes -->
+        <button class="paquetes-btn" onclick="window.location.href='paquetes.html'">💼 Ver Paquetes</button>
+
         <button type="submit">Solicitar Invitación</button>
     </form>
 </div>
@@ -83,9 +104,22 @@
 
     
 <!-- Sección de derechos reservados y políticas -->
+<!-- Pie de Página -->
 <footer>
+    <div class="redes-sociales">
+        <a href="https://facebook.com" target="_blank" class="btn-social">
+            <img src="images/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://instagram.com" target="_blank" class="btn-social">
+            <img src="images/instagram.jpg" alt="Instagram">
+        </a>
+        <a href="https://tiktok.com" target="_blank" class="btn-social">
+            <img src="images/tiktok.jpg" alt="TikTok">
+        </a>
+    </div>
     <p>© 2025 Todos los derechos reservados | <a href="politica.html">Política de Privacidad</a></p>
 </footer>
+
     <script src="script.js"></script>
 
     
