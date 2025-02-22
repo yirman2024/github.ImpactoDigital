@@ -125,37 +125,35 @@ footer a:hover {
 
 
 /* Estilo para el anuncio en la cabecera */
-.anuncio-urgencia {
-    position: fixed; /* Fija el anuncio en la parte superior de la pantalla */
-    top: 0; /* Lo coloca en la parte superior */
-    left: 0; /* Lo alinea con el borde izquierdo */
-    width: 100%; /* Ocupa todo el ancho de la pantalla */
-    background-color: #ff0000; /* Fondo rojo llamativo para captar la atención */
-    color: white; /* Texto en color blanco para contraste */
-    text-align: center; /* Centra el texto */
-    font-size: 22px; /* Tamaño del texto */
+/* Anuncio fijo en la parte superior de la página */
+.anuncio {
+    position: fixed; /* Fija el anuncio en la parte superior */
+    top: 0; /* Lo coloca en la parte superior de la pantalla */
+    width: 100%; /* Ocupa todo el ancho de la página */
+    background-color: red; /* Fondo rojo llamativo */
+    color: yellow; /* Texto en color amarillo para mayor contraste */
+    padding: 10px; /* Espaciado interno para mejorar la visibilidad */
+    font-size: 20px; /* Tamaño del texto */
     font-weight: bold; /* Texto en negrita */
-    padding: 15px 0; /* Espaciado arriba y abajo para mejor visibilidad */
-    z-index: 9999; /* Asegura que el anuncio esté por encima de otros elementos */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Agrega sombra para resaltar el anuncio */
+    text-shadow: 2px 2px 5px black; /* Sombra para hacer el texto más legible */
+    overflow: hidden; /* Evita que el texto se desborde */
+    white-space: nowrap; /* Mantiene el texto en una sola línea */
+    z-index: 1000; /* Se asegura de que el anuncio esté por encima de otros elementos */
 }
 
-/* Efecto de deslizamiento solo para el texto */
-.anuncio-urgencia span {
-    display: inline-block; /* Permite animar el texto sin afectar el contenedor */
-    white-space: nowrap; /* Evita que el texto se corte y se mantenga en una línea */
-    animation: deslizar-urgencia 30s linear infinite; /* Aplica animación de deslizamiento */
+/* Estilo del contenido dentro del anuncio */
+.anuncio span {
+    display: inline-block; /* Permite la animación del texto */
+    position: relative; /* Permite ajustar su posición si es necesario */
+    animation: desplazamiento 30s linear infinite; /* Aplica la animación de desplazamiento */
 }
 
-/* Efecto de deslizamiento del texto de izquierda a derecha */
-@keyframes deslizar-urgencia {
-    0% {
-        transform: translateX(-100%); /* Inicia fuera de la pantalla, a la izquierda */
-    }
-    100% {
-        transform: translateX(100%); /* Se mueve completamente hacia la derecha */
-    }
+/* Animación de desplazamiento del texto */
+@keyframes desplazamiento {
+    from { transform: translateX(100%); } /* Comienza desde el lado derecho */
+    to { transform: translateX(-100%); } /* Se mueve hacia el lado izquierdo */
 }
+
 
 /* Estilo del texto con efecto 3D */
 .anuncio-urgencia span {
@@ -177,14 +175,13 @@ footer a:hover {
     }
 }
 
-/* Fondo de la página */
+/* Fondo de la página 
 body {
-    background: url('evento.jpg') no-repeat center center fixed; /* Imagen de fondo centrada y fija */
-    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
-    font-family: Arial, sans-serif; /* Fuente del texto */
-    color: white; /* Color del texto en la página */
-    margin: 0; /* Elimina márgenes predeterminados */
-    padding: 0; /* Elimina el relleno predeterminado */
+    background: url('evento.jpg') no-repeat center center fixed; /* Imagen de fondo centrada y fija 
+    font-family: Arial, sans-serif; /* Fuente del texto 
+    color: white; /* Color del texto en la página 
+    margin: 0; /* Elimina márgenes predeterminados 
+    padding: 0; /* Elimina el relleno predeterminado 
 }
 
 /* Contenedores con fondo sólido y opacidad */
@@ -224,4 +221,367 @@ h1, h2 {
     font-size: 24px; /* Ajusta el tamaño del texto */
     font-weight: bold; /* Hace el texto más grueso */
 }
+
+/* ---- Contenedor de Paquetes ---- */
+.contenedor-paquetes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px;
+}
+
+/* ---- Cada Paquete ---- */
+.paquete {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 0 15px #0f0;
+    transition: 0.3s ease-in-out;
+}
+
+.paquete img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.paquete:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #41ff71;
+}
+
+/* ---- Botón de Información ---- */
+.info-btn {
+    padding: 10px;
+    background: #0f0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.info-btn:hover {
+    background: #2bff47;
+}
+
+
+/*----------------------------------------------*/
+
+/* ---- Modal ---- */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* ---- Contenido del Modal ---- */
+.modal-contenido {
+    background: #222;
+    color: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #41ff90;
+    position: relative;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ---- Animación de entrada ---- */
+@keyframes fadeIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* ---- Botón de Cerrar (X) ---- */
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+}
+
+.cerrar:hover {
+    color: #41ff71;
+    transform: scale(1.2);
+}
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.btn-social img {
+    width: 50px; /* Ajusta el tamaño del icono */
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-social img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* Redes Sociales */
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.btn-social img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-social img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #fff;
+}
+
+/* Paquetes */
+.paquetes-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.paquete {
+    background: #222;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    max-width: 250px;
+}
+
+.paquete img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.paquete button {
+    background: #ff9800;
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.paquete button:hover {
+    background: #e68900;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: rgb(49, 49, 49);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal button {
+    background: #28a745;
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background: #218838;
+}
+
+
+/*¨-------------------------------------------*/
+
+.precio {
+    font-size: 1.2em;
+    color: #00ff40;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+
+/*--------------------------------------------------*/
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #333;
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+}
+
+/* Estilo de la "X" de cerrar */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Lista de beneficios alineada */
+.modal-content ul {
+    text-align: left;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.modal-content ul li {
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Botón de compra */
+#comprar-btn {
+    background: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+#comprar-btn:hover {
+    background: #218838;
+}
+
+
+/*----------------------------------------*/
+
+.modal-content ul {
+    text-align: left;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.modal-content ul li {
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/*------------------------------------------------*/
+
+/* Contenedor del logo alineado a la izquierda */
+.logo-container {
+    position: absolute;
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    left: 20px; /* Ajusta la distancia desde la izquierda */
+}
+
+/* Ajuste del tamaño del logo */
+.logo-container img {
+    width: 55px; /* Ajusta el tamaño según necesites */
+    height: auto;
+}
+
+
+/*---------------------------------------------*/
+
+/* Aplica solo en index.html */
+.index-page .logo-container {
+    top: 140px; /* Baja el logo más en index.html */
+}
+
+
+/* Aplica solo en index.html */
+.index-page .logo-container {
+    top: 50px; /* Sube el logo (ajusta el valor según lo necesites) */
+}
+
+
+/*-------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------*/
 
