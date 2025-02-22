@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paquetes Disponibles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo de la Empresa">
+            </a>
+        </div>
+    </header>
+    <br> <br> <br><br>
+    <h1 class="titulo">📦 Paquetes Exclusivos</h1>
+   <!-- Sección de Paquetes -->
+<h2 class="flotante">Paquetes Disponibles</h2>
+<div class="paquetes-container">
+    <div class="paquete">
+        <h3>Paquete INNSIGHT</h3>
+        <p class="precio">$499 USD</p>
+        <p style="color: #00FFFF; font-weight: bold;">El paquete incluye:</p>
+        <p>Inn-Academy</p>
+        <p>Inn-TV</p>
+        <p>Inn-Trade</p>
+        
+        
+        <button onclick="redireccionarWhatsApp('Paquete INNSIGHT', 499)">COMPRAR AHORA</button>
+
+    </div>
+
+    <div class="paquete">
+        <h3>Paquete INNTREPID</h3>
+        <p class="precio">$899 USD</p>
+        <p style="color: #00FFFF; font-weight: bold;">El paquete incluye:</p>
+        <p>Inn-Academy</p>
+        <p>Inn-TV</p>
+        <p>Inn-Travel</p>
+       
+        
+        <button onclick="redireccionarWhatsApp('Paquete INNTREPID', 899)">COMPRAR AHORA</button>
+
+    </div>
+
+    <div class="paquete">
+        <h3>Paquete INNPULSE</h3>
+        <p class="precio">$1,099 USD</p>
+        <p style="color: #00FFFF; font-weight: bold;">El paquete incluye:</p>
+        <p>Inn-Academy</p>
+        <p>Inn-TV</p>
+        <p>Inn-Trade</p>
+        <p>Inn-Telligence</p>
+        <p>Talk-INN</p>
+        
+       
+        <button onclick="redireccionarWhatsApp('Paquete INNPULSE', 1.099)">COMPRAR AHORA</button>
+
+    </div>
+
+    <div class="paquete">
+        <h3>Paquete INNFINITY</h3>
+        <p class="precio">$1,799 USD</p>
+        <p style="color: #00FFFF; font-weight: bold;">El paquete incluye:</p>
+        <p>Inn-Academy</p>
+        <p>Inn-TV</p>
+        <p>Inn-Trade</p>
+        <p>Inn-Telligence</p>
+        <p>Talk-INN</p>
+        <p>INN-Travel</p>
+        
+        <button onclick="redireccionarWhatsApp('Paquete INNFINITY', 1,799)">COMPRAR AHORA</button>
+
+    </div>
+</div>
+
+
+    
+
+    
+    <!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModal()">&times;</span>
+        <h2 id="modal-titulo"></h2>
+        <p id="modal-descripcion"></p>
+        <ul id="modal-beneficios"></ul>
+        <button id="comprar-btn">Comprar Ahora</button>
+    </div>
+</div>
+
+    
+    
+<br><br>
+    <button class="paquetes-btn" onclick="window.location.href='index.html'">🏠 Volver</button>
+
+    <script src="script.js"></script>
+
+    <!-- Pie de Página -->
+<footer>
+    <div class="redes-sociales">
+        <a href="https://facebook.com" target="_blank" class="btn-social">
+            <img src="images/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/karentorresenfermera?igsh=MWpvaHpjc3RvZ2sxcA%3D%3D&utm_source=qr" target="_blank" class="btn-social">
+            <img src="images/instagram.jpg" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com/@karentorres1994?_t=ZS-8u8SN06SGpx&_r=1" target="_blank" class="btn-social">
+            <img src="images/tiktok.jpg" alt="TikTok">
+        </a>
+    </div>
+    <p>© 2025 Todos los derechos reservados | <a href="politica.html">Política de Privacidad</a></p>
+</footer>
+
+</body>
+</html>
